@@ -10,6 +10,31 @@ Same opening question: the default first reply on the left, the first two comple
 
 ## Why TopicStep exists
 
+### Models stream. People need time to think.
+
+In their Neuron perspective, [Zheng and Meister argue that human behavioral information throughput is roughly 10 bits per second](https://doi.org/10.1016/j.neuron.2024.11.008). Meanwhile, OpenAI reports [more than 1,000 output tokens per second for Codex-Spark](https://openai.com/index/introducing-gpt-5-3-codex-spark/). Generating an explanation and making sense of it operate on very different timescales.
+
+These are not directly interchangeable measures, and the paper does not test LLM conversations. The design question is simpler: when more text keeps arriving, are you getting room to think, or just trying to keep up? TopicStep separates the assistant's preparation from its conversational pace, so you can examine an idea before the next one arrives.
+
+<details>
+<summary>A rough bits-per-second illustration, not a cognitive speed comparison</summary>
+
+Using [approximately 4 English characters per token](https://help.openai.com/en/articles/4936856) and the paper's rough estimate of 1 bit per English character gives:
+
+`estimated text information rate = tokens/second x 4 characters/token x 1 bit/character`
+
+| Assumed output rate | Illustrative text information rate |
+| --- | ---: |
+| 50 tokens/s | about 200 bits/s |
+| 100 tokens/s | about 400 bits/s |
+| 1,000 tokens/s | about 4,000 bits/s |
+
+The first two rates are illustrative scenarios, not measured averages. The last uses a rounded rate from the Codex-Spark announcement, not a measurement of our example model. Actual rates vary by model, workload and serving conditions.
+
+This applies an English-text entropy assumption; it does not measure the information content of actual LLM output or the mental effort required to understand it. Nor is 10 bits/s a universal reading limit: the [paper's table](https://arxiv.org/html/2408.10234v2) includes English reading estimates of 28-45 bits/s. Text redundancy, prior knowledge and opportunities to pause all matter. These numbers do not establish an overload threshold or prove that streaming prevents deep thought.
+
+</details>
+
 ### Too much, all at once
 
 An assistant can answer a complex question with an impressive wall of information. But receiving the whole explanation at once creates cognitive load: before you have understood the first idea, several more have already arrived. Keeping up with the answer can crowd out the deeper thinking you came for: examining an assumption, connecting an idea to something you know, or noticing what you still do not understand.
