@@ -2,7 +2,7 @@
 
 Prepare the whole topic. Discuss it one understandable piece at a time.
 
-TopicStep is a dossier-backed discussion skill for exploring complex subjects through natural conversation. It keeps a topic map, evidence, conclusions and open questions in a document, while revealing only what is useful for the current exchange.
+TopicStep makes complex topics easier to discuss at a human pace. The assistant prepares the topic in a document, then explains smaller parts through lightweight, natural conversation, leaving you room to think and ask follow-up questions before moving on.
 
 ![Default first reply compared with the first two TopicStep exchanges](examples/navier-stokes/comparison.png)
 
@@ -12,9 +12,9 @@ Same opening question: the default first reply on the left, the first two comple
 
 ### Too much, all at once
 
-An assistant can answer a complex question with an impressive wall of information. But receiving the whole explanation at once creates cognitive load: before you have understood the first idea, several more have already arrived.
+An assistant can answer a complex question with an impressive wall of information. But receiving the whole explanation at once creates cognitive load: before you have understood the first idea, several more have already arrived. Keeping up with the answer can crowd out the deeper thinking you came for: examining an assumption, connecting an idea to something you know, or noticing what you still do not understand.
 
-The experience should feel closer to an everyday conversation. Explain a small part, leave room for a follow-up, and let understanding develop through the exchange. The aim is not merely shorter answers; it is information arriving at a pace you can question and absorb.
+The experience should feel closer to an everyday conversation. Explain a small part, leave room to sit with it and ask a follow-up, then continue when you are ready. The aim is not merely shorter answers; it is control over when more information arrives, so you have space to think rather than simply keep reading.
 
 ### A pacing prompt is not durable discussion structure
 
@@ -31,7 +31,9 @@ These are the problems the skill is designed to address, not guarantees that eve
 3. Answer follow-ups naturally and completely, without dumping the remaining document into chat.
 4. Consult the dossier when recovering context or developing material that is not already available. Update it for meaningful corrections or conclusions, not after every ordinary reply.
 
-The dossier stores shareable analysis and evidence, not private chain-of-thought. It is working memory, not a script that forces the user through a fixed curriculum. The user can redirect the conversation or explicitly ask for the whole overview.
+TopicStep is a discussion companion, not a teaching protocol or a general-purpose memory system. There are no required quizzes, comprehension tests, or questions you must answer before receiving a direct explanation. You can follow your curiosity, redirect the conversation, or explicitly ask for the whole overview.
+
+The dossier preserves the topic: its concepts, evidence, conclusions, disagreements and open questions. It is not a learner profile or a per-turn learning log, and it does not store private chain-of-thought. Keeping it up to date is event-driven rather than routine bookkeeping, so the document supports the conversation without becoming another task to manage.
 
 One active topic is maintained per session. Reinvoking the skill does not silently replace it. Ending a discussion is explicit.
 
