@@ -4,6 +4,10 @@ Prepare the whole topic. Discuss it one understandable piece at a time.
 
 TopicStep is a dossier-backed discussion skill for exploring complex subjects through natural conversation. It keeps a topic map, evidence, conclusions and open questions in a document, while revealing only what is useful for the current exchange.
 
+![Default first reply compared with the first two TopicStep exchanges](examples/navier-stokes/comparison.png)
+
+Same opening question: the default first reply on the left, the first two complete TopicStep exchanges on the right. Same font size and column width; status labels omitted. [View full-size image](examples/navier-stokes/comparison.png) or [read the complete comparison](examples/navier-stokes/README.md).
+
 ## Why TopicStep exists
 
 ### Too much, all at once
