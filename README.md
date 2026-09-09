@@ -12,7 +12,7 @@ Same opening question: the default first reply on the left, the first two comple
 
 ### Models stream. People need time to think.
 
-In their Neuron perspective, [Zheng and Meister argue that human behavioral information throughput is roughly 10 bits per second](https://doi.org/10.1016/j.neuron.2024.11.008). Meanwhile, OpenAI reports [more than 1,000 output tokens per second for Codex-Spark](https://openai.com/index/introducing-gpt-5-3-codex-spark/). Generating an explanation and making sense of it operate on very different timescales.
+In their Neuron perspective, [Zheng and Meister argue that human behavioral information throughput is roughly 10 bits per second](https://doi.org/10.1016/j.neuron.2024.11.008). For a comparison with general-purpose models rather than a specialized low-latency model, Artificial Analysis reports output speeds of approximately [68 tokens/s for GPT-5.6 Sol (max)](https://artificialanalysis.ai/models/gpt-5-6-sol) and [52 tokens/s for GPT-6 Astra (max)](https://artificialanalysis.ai/models/gpt-6-astra), as checked on September 10, 2026. Generating an explanation and making sense of it operate on different timescales.
 
 These are not directly interchangeable measures, and the paper does not test LLM conversations. The design question is simpler: when more text keeps arriving, are you getting room to think, or just trying to keep up? TopicStep separates the assistant's preparation from its conversational pace, so you can examine an idea before the next one arrives.
 
@@ -23,13 +23,12 @@ Using [approximately 4 English characters per token](https://help.openai.com/en/
 
 `estimated text information rate = tokens/second x 4 characters/token x 1 bit/character`
 
-| Assumed output rate | Illustrative text information rate |
-| --- | ---: |
-| 50 tokens/s | about 200 bits/s |
-| 100 tokens/s | about 400 bits/s |
-| 1,000 tokens/s | about 4,000 bits/s |
+| Model (Artificial Analysis configuration) | Reported output speed | Illustrative text information rate |
+| --- | ---: | ---: |
+| GPT-5.6 Sol (max) | 68 tokens/s | about 272 bits/s |
+| GPT-6 Astra (max) | 52 tokens/s | about 208 bits/s |
 
-The first two rates are illustrative scenarios, not measured averages. The last uses a rounded rate from the Codex-Spark announcement, not a measurement of our example model. Actual rates vary by model, workload and serving conditions.
+These are the benchmark pages' first-party API output-speed figures, not measurements of TopicStep or our example model. Output speed measures generation after streaming begins; it is not the end-to-end rate including time to first answer, reasoning delay or tool use. The bit rates are our illustrative conversions, not benchmark measurements. Actual rates vary by model, workload and serving conditions.
 
 This applies an English-text entropy assumption; it does not measure the information content of actual LLM output or the mental effort required to understand it. Nor is 10 bits/s a universal reading limit: the [paper's table](https://arxiv.org/html/2408.10234v2) includes English reading estimates of 28-45 bits/s. Text redundancy, prior knowledge and opportunities to pause all matter. These numbers do not establish an overload threshold or prove that streaming prevents deep thought.
 
