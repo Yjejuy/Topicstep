@@ -12,14 +12,14 @@ Same opening question: the default first reply on the left, the first two comple
 
 ### Models stream. People need time to think.
 
-In their Neuron perspective, [Zheng and Meister argue that human behavioral information throughput is roughly 10 bits per second](https://doi.org/10.1016/j.neuron.2024.11.008). For a comparison with general-purpose models rather than a specialized low-latency model, Artificial Analysis reports output speeds of approximately [68 tokens/s for GPT-5.6 Sol (max)](https://artificialanalysis.ai/models/gpt-5-6-sol) and [52 tokens/s for GPT-6 Astra (max)](https://artificialanalysis.ai/models/gpt-6-astra), as checked on September 10, 2026. Generating an explanation and making sense of it operate on different timescales.
+In their Neuron perspective, [Zheng and Meister argue that human behavioral information throughput is roughly 10 bits/s](https://doi.org/10.1016/j.neuron.2024.11.008). A rough English-text conversion of Artificial Analysis output speeds puts [GPT-5.6 Sol (max)](https://artificialanalysis.ai/models/gpt-5-6-sol) at **272 bits/s** and [GPT-6 Astra (max)](https://artificialanalysis.ai/models/gpt-6-astra) at **208 bits/s**. Generating an explanation and making sense of it operate on different timescales.
 
 These are not directly interchangeable measures, and the paper does not test LLM conversations. The design question is simpler: when more text keeps arriving, are you getting room to think, or just trying to keep up? TopicStep separates the assistant's preparation from its conversational pace, so you can examine an idea before the next one arrives.
 
 <details>
 <summary>A rough bits-per-second illustration, not a cognitive speed comparison</summary>
 
-Using [approximately 4 English characters per token](https://help.openai.com/en/articles/4936856) and the paper's rough estimate of 1 bit per English character gives:
+Using output speeds checked on September 10, 2026, [approximately 4 English characters per token](https://help.openai.com/en/articles/4936856), and the paper's rough estimate of 1 bit per English character gives:
 
 `estimated text information rate = tokens/second x 4 characters/token x 1 bit/character`
 
