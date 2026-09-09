@@ -1,0 +1,32 @@
+{
+  "description": "Restore jj-discuss-step-by-step state without injecting the full dossier",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.codex/skills/jj-discuss-step-by-step/scripts/discussion_state.py\" hook --harness codex",
+            "commandWindows": "py \"%USERPROFILE%\\.codex\\skills\\jj-discuss-step-by-step\\scripts\\discussion_state.py\" hook --harness codex",
+            "timeout": 10,
+            "additionalContextLimit": 4800
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.codex/skills/jj-discuss-step-by-step/scripts/discussion_state.py\" hook --harness codex",
+            "commandWindows": "py \"%USERPROFILE%\\.codex\\skills\\jj-discuss-step-by-step\\scripts\\discussion_state.py\" hook --harness codex",
+            "timeout": 10,
+            "additionalContextLimit": 4800
+          }
+        ]
+      }
+    ]
+  }
+}

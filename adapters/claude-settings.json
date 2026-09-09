@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.codex/skills/jj-discuss-step-by-step/scripts/discussion_state.py\" hook --harness claude-code",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.codex/skills/jj-discuss-step-by-step/scripts/discussion_state.py\" hook --harness claude-code",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
+

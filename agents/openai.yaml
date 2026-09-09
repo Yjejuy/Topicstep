@@ -1,0 +1,5 @@
+interface:
+  display_name: "Step-by-step Discussion"
+  short_description: "Externalize a full topic map, then discuss it gradually"
+  default_prompt: "Use $jj-discuss-step-by-step to prepare a durable dossier for this topic, then discuss it with me one step at a time."
+

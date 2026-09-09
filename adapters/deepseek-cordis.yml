@@ -1,0 +1,6 @@
+# Merge this plugin entry into the DeepSeek Harness Cordis configuration.
+# Resolve configPath for the target machine instead of copying state files.
+- name: '@deepseek-ai/dsh-hooks-codex'
+  config:
+    configPath: ~/.codex/skills/jj-discuss-step-by-step/adapters/deepseek-hooks.json
+    model: deepseek-v4

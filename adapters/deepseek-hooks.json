@@ -1,0 +1,30 @@
+{
+  "description": "Codex-compatible hooks for DeepSeek Harness via @deepseek-ai/dsh-hooks-codex",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.codex/skills/jj-discuss-step-by-step/scripts/discussion_state.py\" hook --harness deepseek-harness",
+            "timeout": 10,
+            "additionalContextLimit": 4800
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.codex/skills/jj-discuss-step-by-step/scripts/discussion_state.py\" hook --harness deepseek-harness",
+            "timeout": 10,
+            "additionalContextLimit": 4800
+          }
+        ]
+      }
+    ]
+  }
+}
