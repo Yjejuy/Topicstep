@@ -74,3 +74,7 @@ Run this from the cloned repository. Tests use temporary state directories and P
 The current skill entry point is [SKILL.md](SKILL.md). Its invocation remains `$jj-discuss-step-by-step`; TopicStep is the public-facing name.
 
 Harness adapter files are in [adapters](adapters/). Their presence should not be read as a claim that every harness has received runtime validation. The example uses isolated state files rather than installed session hooks.
+
+## License
+
+[MIT](LICENSE). You may use, modify, redistribute and use TopicStep commercially, subject to retaining the copyright and license notice. The software is provided without warranty. Linked third-party materials remain subject to their own terms.
